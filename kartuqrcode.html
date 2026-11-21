@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cetak Kartu Pelajar Siswa</title>
+<title>Cetak Kartu Absensi Siswa</title>
 <!-- LIBRARY QR CODE & SUPABASE SDK -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -93,7 +93,7 @@ body{margin:0;font-family:Arial,sans-serif;background:#f3f6fa;color:#172033}
 <body>
 <div class="wrap">
   <section class="top no-print">
-    <h1>Cetak Kartu Pelajar Siswa</h1>
+    <h1>Cetak Kartu Absensi Siswa</h1>
     <p>Ukuran kartu KTP • 10 kartu per halaman A4 • Layout Siap Cetak.</p>
     <div class="settings">
       <div>
@@ -369,7 +369,7 @@ function ukuranTtl(teks){ const n = String(teks || '').trim().length; if (n <= 2
 function kartuHtml(s, warna, bingkai, namaSekolah) {
   const logoL = logoKiriData ? '<img class="logo left" src="' + logoKiriData + '" onerror="this.remove()">' : '';
   const logoR = logoKananData ? '<img class="logo right" src="' + logoKananData + '" onerror="this.remove()">' : '';
-  return '<div class="card theme-' + esc(warna) + ' frame-' + esc(bingkai) + '"><div class="inner-frame"></div><div class="accent-stripe"></div>' + logoL + logoR + '<div class="school">' + esc(namaSekolah) + '</div><div class="line"></div><div class="line right"></div><div class="title">KARTU PELAJAR</div><div class="photo"><div class="photo-in">FOTO</div></div><div class="details"><div class="lbl">NAMA</div><div class="val nama" style="font-size:' + ukuranNama(s.nama || '-') + 'mm">' + esc(s.nama || '-') + '</div><div class="lbl">NISN</div><div class="val">' + esc(s.nisn || '-') + '</div><div class="lbl">TTL</div><div class="val ttl" style="font-size:' + ukuranTtl(s.ttl || '-') + 'mm">' + esc(s.ttl || '-') + '</div><div class="lbl">KELAS</div><div class="val kelas" style="font-size:' + ukuranKelas(s.kelas || '-') + 'mm">' + esc(s.kelas || '-') + '</div></div><div class="qr" id="qr_' + safeId(s.id_siswa) + '"></div><div class="footer-left">KARTU IDENTITAS SISWA</div><div class="footer-right">' + esc(namaSekolah) + '</div></div>';
+  return '<div class="card theme-' + esc(warna) + ' frame-' + esc(bingkai) + '"><div class="inner-frame"></div><div class="accent-stripe"></div>' + logoL + logoR + '<div class="school">' + esc(namaSekolah) + '</div><div class="line"></div><div class="line right"></div><div class="title">KARTU ABSENSI</div><div class="photo"><div class="photo-in">FOTO</div></div><div class="details"><div class="lbl">NAMA</div><div class="val nama" style="font-size:' + ukuranNama(s.nama || '-') + 'mm">' + esc(s.nama || '-') + '</div><div class="lbl">NISN</div><div class="val">' + esc(s.nisn || '-') + '</div><div class="lbl">TTL</div><div class="val ttl" style="font-size:' + ukuranTtl(s.ttl || '-') + 'mm">' + esc(s.ttl || '-') + '</div><div class="lbl">KELAS</div><div class="val kelas" style="font-size:' + ukuranKelas(s.kelas || '-') + 'mm">' + esc(s.kelas || '-') + '</div></div><div class="qr" id="qr_' + safeId(s.id_siswa) + '"></div><div class="footer-left">KARTU IDENTITAS SISWA</div><div class="footer-right">' + esc(namaSekolah) + '</div></div>';
 }
 </script>
 </body>
